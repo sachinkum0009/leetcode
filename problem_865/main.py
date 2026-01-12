@@ -1,4 +1,5 @@
 from typing import List, Optional
+from functools import cache
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -9,6 +10,7 @@ class TreeNode:
 
 class Solution:
     def subtreeWithAllDeepest(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        @cache
         def dfs(node):
             if not node:
                 return 0, None
